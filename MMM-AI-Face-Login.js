@@ -74,11 +74,11 @@ Module.register("MMM-AI-Face-Login", {
 		// Asychronoulsy load either GIF or face (as name).
 		var img = document.createElement("img");
 		var newImg = new Image;
+		newImg.src = "modules/MMM-AI-Face-Login/public/" + this.userImage;
 		newImg.onload = function()
 		{
 			img.src = this.src;
 		}
-		newImg.src = "modules/MMM-AI-Face-Login/public/" + this.userImage;
 		imgHolderElement.appendChild(img);
 
 		wrapper.appendChild(imgHolderElement);
