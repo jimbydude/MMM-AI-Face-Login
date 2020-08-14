@@ -32,7 +32,7 @@ In your MagicMirror directory:
 ```bash cd modules
    git clone https://github.com/jimbydude/MMM-AI-Face-Login.git
    cd MMM-AI-Face-Login
-   npm install
+   npm install (not required unless you want to do testin/code checking etc)
 ```
 
 ## Step 2 – Add files to the Config.js
