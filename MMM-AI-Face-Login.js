@@ -7,6 +7,9 @@
  * MIT Licensed.
  */
 
+const MORNING   = -1;
+const AFTERNOON = 0;
+const EVENING   = 1;
 Module.register("MMM-AI-Face-Login", {
 	defaults: {
 		updateInterval: 10000,
@@ -14,7 +17,11 @@ Module.register("MMM-AI-Face-Login", {
 		width: "200px",
 		position: "lower_third",
 		useMMMFaceRecoDNN: false,
-		interval: 2000
+		interval: 2000,
+		morningStartTime: 3,
+		morningEndTime: 12,
+		afternoonStartTime: 12,
+		afternoonEndTime: 17,
 	},
 
 	requiresVersion: "2.1.0", // Required version of MagicMirror
@@ -23,7 +30,7 @@ Module.register("MMM-AI-Face-Login", {
 		var self = this;
 		var dataRequest = null;
 		var dataNotification = null;
-		this.userName = "Mr. Nobody";
+		this.userName = "Guest";
 		this.userImage = "guest.gif";
 		this.timer = null;
 
@@ -42,12 +49,25 @@ Module.register("MMM-AI-Face-Login", {
 
 		// create element wrapper for show into the module
 		var wrapper = document.createElement("div");
-		wrapper.innerHTML = this.translate('TITLE');;
+		wrapper.innerHTML = this.translate('TITLE');
 		wrapper.className = "face-image";
 
+		// Figure out what time of day message we want
+		var message = this.translate('WELCOME');
+		if ( this.userName !== "Guest")
+		{
+			if ( this.timeOfDay() == MORNING ) {
+				message = this.translate('GOOD_MORNING');
+			} else if (this.timeOfDay() == AFTERNOON) {
+				message = this.translate('GOOD_AFERNOON');
+			} else {
+				message = this.translate('GOOD_EVENING');
+			}
+		}
+		
 		// Ceate the image element and show gif by default.
 		var imgHolderElement = document.createElement("p");
-		imgHolderElement.innerHTML = this.translate('WELCOME'); + " " + this.userName;
+		imgHolderElement.innerHTML = message + " " + this.capitalizeWords(this.userName);
 		imgHolderElement.classList.add(this.config.position);
 		imgHolderElement.style.width = this.config.width;
 		
@@ -82,7 +102,7 @@ Module.register("MMM-AI-Face-Login", {
 		return {
 			en: "translations/en.json",
 			es: "translations/es.json",
-			en: "translations/ko.json"
+			ko: "translations/ko.json"
 		};
 	},
 
@@ -133,4 +153,23 @@ Module.register("MMM-AI-Face-Login", {
 		}		
 	},
 
+	// Local helper functions
+	capitalizeWords: function(str)
+	{
+	 return str.toString().toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.substring(1)).join(' ');
+	},
+	
+	timeOfDay: function()
+	{
+		var hour = moment().hour();
+		
+		if (hour >= this.config.morningStartTime && hour < this.config.morningEndTime) {
+			return MORNING;
+		} else if (hour >= this.config.afternoonStartTime && hour < this.config.afternoonEndTime ) {
+			return AFTERNOON;
+		}
+
+		return EVENING;
+	}
+	
 });
