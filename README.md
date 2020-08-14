@@ -1,6 +1,7 @@
 # MMM-AI-Face-Login
+This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror/) to add face recognition with profiles.
 
-This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror/) to add daec recognition with profiles.
+It is a fork of Eben Kouaos https://github.com/EbenKouao/MMM-Face-Recognition-SMAI. See his other projects at https://smartbuilds.io/
 
 ## How it works
 This module allows you to access profiles using face recognition. This works on the back of MMM-Face-Reco-DNN/OpenCV face recognition module.
@@ -22,6 +23,7 @@ until the user is logged out by MMM-Face-Reco-DNN
 * [OpenCV face-recognition with DNN](https://https://github.com/nischi/MMM-Face-Reco-DNN)
 * Raspberry Pi 4 Camera Module
 
+Make sure to complete MMM-Face-Reco-DNN setup including adding classes for showing and hiding to your config before proceding.
 
 ## Step 1 – Install the module
 In your MagicMirror directory:
