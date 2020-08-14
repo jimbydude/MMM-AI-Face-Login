@@ -51,10 +51,10 @@ Here is an example for an entry in `config.js`
 **Pre-requisite:** Follow isntructions in OpenCV Installation to setup your dataset with images.
 
 This module assumes a few things:
-# The default gif is in 'Public' folder
-# There is an image for each user in the 'Public' folder that matches with user directory names in OpenCV Dataset
+* The default gif is in 'Public' folder
+* There is an image for each user in the 'Public' folder that matches with user directory names in OpenCV Dataset
 
-For example if you have the following structure containing your image set in OpenCV
+For example if you have the following structure containing your image set in OpenCV module:
 ```
 - dataset
   - james
@@ -67,7 +67,7 @@ For example if you have the following structure containing your image set in Ope
     - img03.jpg
 ```
 
-Then you will also have the following in the 'Public' folder:
+Then you will also have the following in the 'Public' folder of this module:
 ```
 - public
     - guest.gif
