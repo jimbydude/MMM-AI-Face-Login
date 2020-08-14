@@ -14,6 +14,7 @@ until the user is logged out by MMM-Face-Reco-DNN
 |---|---|
 | A guest profile as default | User has been recognised |
 
+'Screenshots from Ebens Module'
 
 ## Preconditions
 
