@@ -81,5 +81,4 @@ These images are the ones that will be shown on the mirror UI when a user logs i
 
 | Option           | Description
 |----------------- |-----------
-| `useMMMFaceRecoDNN`        | *Required* Use the DNN deetction type. Currently only supported type.
- <br><br>**Type:** `int`(milliseconds) <br>Default 60000 milliseconds (1 minute)
+| `useMMMFaceRecoDNN`        | *Required* Use the DNN deetction type. Currently only supported type. <br><br>**Type:** `bool` <br>Default true
