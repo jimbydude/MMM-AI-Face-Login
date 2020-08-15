@@ -21,7 +21,7 @@ until the user is logged out by MMM-Face-Reco-DNN
 * MagicMirror<sup>2</sup> instance
 * Node.js version >= 7
 * npm
-* [OpenCV face-recognition with DNN](https://github.com/nischi/MMM-Face-Reco-DNN)
+* [OpenCV face-recognition with DNN](https://github.com/nischi/MMM-Face-Reco-DNN) (Currently have a PR with them to add new Notificaiton when show/hide called)
 * Raspberry Pi 4 Camera Module
 
 Make sure to complete MMM-Face-Reco-DNN setup including adding classes for showing and hiding to your config before proceding.
