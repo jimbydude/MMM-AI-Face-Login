@@ -1,3 +1,6 @@
+NOTE: Archived. Use https://github.com/jimbydude/MMM-Face-Multi-User-Recognition-SMAI insead
+
+
 # MMM-AI-Face-Login
 This is a module for the [MagicMirror²](https://github.com/MichMich/MagicMirror/) to add face recognition with profiles.
 
